@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Alerts</title>
+    <script type="module" src="scripts/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@streamerbot/client/dist/streamerbot-client.js"></script>
+    <link rel="stylesheet" href="normalizecss/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <audio id="alert-noise" src="static/sound/catch-modern.mp3"></audio>
+
+    <div id="popup">
+        <div id="alert">
+            <img id="alert-image" src="static/img/pipthank.gif">
+            <div>
+                <span id="sentence-start"></span>
+                <span id="username">username</span>
+                <span id="sentence-mid"></span>
+                <span id="amount">$67.00</span>
+                <span id="sentence-end"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="filterWrapper">
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <filter id="outlineEffect" color-interpolation-filters="sRGB">
+                <feConvolveMatrix in="SourceAlpha" result="OutlineAlpha" divisor="1" order="1,1" kernelMatrix="1"/>
+                <feFlood flood-color="#000" result="OutlineColor" />
+                <feComposite in="OutlineColor" in2="OutlineAlpha" operator="in" result="Outline" />
+
+                <feMerge>
+                    <feMergeNode in="Outline"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="shadowEffect" color-interpolation-filters="sRGB">
+                <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000"/>
+            </filter>
+            <filter id="blankEffect"></filter>
+        </svg>
+	</div>
+
+    <script defer type="text/javascript" src="scripts/outline.js"></script>
+  </body>
+
+</html>
