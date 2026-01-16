@@ -73,8 +73,8 @@ body {
 }
 
 #alert-image {
-  width: 5%;
-  padding-right: 1em;
+  width: 9%;
+  padding-right: 0.5em;
 }
 
 #username, #amount {

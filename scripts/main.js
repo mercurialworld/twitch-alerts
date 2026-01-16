@@ -75,7 +75,7 @@ function StartSBotClient(host, port, auth) {
 
     client.on("Twitch.Follow", (_) => {
         ChangeAlertText(null, null, "Thank you for the follow!", null, null);
-        ChangeImage("static/img/pipthank.gif");
+        ChangeImage("static/img/pipari.png");
         ShowAlert();
 
         setTimeout(() => {
@@ -85,7 +85,7 @@ function StartSBotClient(host, port, auth) {
 
     client.on("Twitch.Raid", (data) => {
         ChangeAlertText("Thank you", data.data.from_broadcaster_user_name, "for the raid with", data.data.viewers, "people!");
-        ChangeImage("static/img/pipworm.gif");
+        ChangeImage("static/img/pipspin.gif");
         ShowAlert();
         PlayAudio("static/sound/catch-modern.mp3");
 
@@ -96,7 +96,7 @@ function StartSBotClient(host, port, auth) {
 
     client.on("Twitch.Sub", (data) => {
         ChangeAlertText("Thank you", data.data.user.name, "for the", `tier ${data.data.sub_tier / 1000}`, "subscription!");
-        ChangeImage("static/img/pipworm.gif");
+        ChangeImage("static/img/pipwaddle.gif");
         ShowAlert();
         PlayAudio("static/sound/catch-classic.mp3");
 
@@ -107,7 +107,7 @@ function StartSBotClient(host, port, auth) {
 
     client.on("Twitch.ReSub", (data) => {
         ChangeAlertText("Thank you", data.data.user.name, "for the resub for", data.data.cumulativeMonths, "months!");
-        ChangeImage("static/img/pipworm.gif");
+        ChangeImage("static/img/pipwaddle.gif");
         ShowAlert();
         PlayAudio("static/sound/catch-classic.mp3");
 
@@ -118,7 +118,7 @@ function StartSBotClient(host, port, auth) {
     
     client.on("Twitch.Cheer", (data) => {
         ChangeAlertText(null, data.data.user.name, "cheered", data.data.bits, "bits!");
-        ChangeImage("static/img/pipwaddle.gif");
+        ChangeImage("static/img/pipwai.png");
         ShowAlert();
         PlayAudio("static/sound/heal.mp3");
 
@@ -126,6 +126,20 @@ function StartSBotClient(host, port, auth) {
            HideAlert(); 
         }, 10000);
     });
+
+    client.on("Kofi.Donation", (data) => {
+        console.log(data);
+        ChangeAlertText(null, data.data.from, "donated", `${data.data.amount} ${data.data.currency}`, "via Ko-fi!");
+        ChangeImage("static/img/pipspin.gif");
+        ShowAlert();
+        PlayAudio("static/sound/heal.mp3");
+
+        setTimeout(() => {
+           HideAlert(); 
+        }, 10000);
+    });
+
+
 
     return client;
 }
