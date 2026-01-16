@@ -1,39 +1,42 @@
 @font-face {
   font-family: "irohamaru mikami";
+  font-weight: 400;
   src: url("./static/fonts/irohamaru-mikami-Regular.ttf") format("truetype");
 }
 
-@keyframes slideIn {
+@font-face {
+  font-family: "irohamaru mikami";
+  font-weight: 500;
+  src: url("./static/fonts/irohamaru-mikami-Medium.ttf") format("truetype");
+}
+
+@keyframes fadeIn {
 	0% {
-		transform: translateY(-150px);
 		opacity: 0;
 	}
 	100% {
-		transform: translateY(0px);
 		opacity: 1;
 	}
 }
 
-@keyframes slideOut {
+@keyframes fadeOut {
 	0% {
-		transform: translateY(0px);
 		opacity: 1;
 	}
 	100% {
-		transform: translateY(-150px);
 		opacity: 0;
 	}
 }
 
-.slideIn, .slideOut {
+.fadeIn, .fadeOut {
 	animation-duration: 1s;
 	animation-direction: forwards;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;	
 }
 
-.slideIn { animation-name: slideIn; }
-.slideOut { animation-name: slideOut; }
+.fadeIn { animation-name: fadeIn; }
+.fadeOut { animation-name: fadeOut; }
 
 .hidden {
   display: none;
@@ -44,24 +47,19 @@
 	--outlineStuff: url(#outlineEffect);
 
   --effect-filters: var(--outlineStuff) var(--shadowStuff);
-
-  --sentence-start: "Thank you ";
-  --sentence-mid: " for the ";
-  --sentence-end: "!";
 }
 
 body {
   font-family: "irohamaru mikami", sans-serif;
+  font-weight: 500;
   color: white;
   font-size: 45px;
 }
 
 #popup {
-  transform: translateY(-150px);
+  opacity: 0;
   display: flex;
   justify-content: center;
-  background-color: #1d3c61;
-  opacity: 0.9;
   height: 100px;
   filter: var(--effect-filters);
 }

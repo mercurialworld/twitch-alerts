@@ -53,14 +53,14 @@ function PlayAudio(audioFile) {
 
 function ShowAlert() {
     const alertElement = document.getElementById("popup");
-    alertElement.classList.add("slideIn");
-    alertElement.classList.remove("slideOut");
+    alertElement.classList.add("fadeIn");
+    alertElement.classList.remove("fadeOut");
 }
 
 function HideAlert() {
     const alertElement = document.getElementById("popup");
-    alertElement.classList.add("slideOut");
-    alertElement.classList.remove("slideIn");
+    alertElement.classList.add("fadeOut");
+    alertElement.classList.remove("fadeIn");
 }
 
 function StartSBotClient(host, port, auth) {
