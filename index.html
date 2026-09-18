@@ -12,21 +12,31 @@
   <body>
     <audio id="alert-noise" src="static/sound/catch-modern.mp3"></audio>
 
-    <div id="popup">
-        <div id="alert">
-            <img id="alert-image" src="static/img/pipthank.gif">
-            <div>
-                <span id="sentence-start"></span>
-                <span id="username">username</span>
-                <span id="sentence-mid"></span>
-                <span id="amount">$67.00</span>
-                <span id="sentence-end"></span>
+    <div id="overlay">
+        <div id="alert-box">
+            <div id="alert-popup">
+                <div id="alert">
+                    <img id="alert-image" src="static/img/pipthank.gif">
+                    <div>
+                        <span id="sentence-start"></span>
+                        <span id="username">username</span>
+                        <span id="sentence-mid"></span>
+                        <span id="amount">$67.00</span>
+                        <span id="sentence-end"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="redeem-box">
+            <div id="redeem-popup">
+                <div id="redeem">
+                    <img id="redeem-image" src="static/img/tubeman1.gif" />
+                </div>
             </div>
         </div>
     </div>
-
-
-
+ 
     <div id="filterWrapper">
         <svg xmlns="http://www.w3.org/2000/svg">
             <filter id="outlineEffect" color-interpolation-filters="sRGB">
@@ -45,7 +55,7 @@
             </filter>
             <filter id="blankEffect"></filter>
         </svg>
-	</div>
+    </div>   
 
     <script defer type="text/javascript" src="scripts/outline.js"></script>
   </body>
