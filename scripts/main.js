@@ -175,19 +175,26 @@ function StartSBotClient(host, port, auth, direction) {
                 const tubeImg = `static/img/tubeman${Math.floor(Math.random() * 5) + 1}.gif`;
 
                 ChangeRedeemImage(tubeImg);
+
+                ShowRedeem(direction);
+
+                setTimeout(() => {
+                    HideRedeem(direction);
+                }, 5000);
                 break;
             case "67":
                 ChangeRedeemImage("static/img/67.gif");
+
+                ShowRedeem(direction);
+
+                setTimeout(() => {
+                    HideRedeem(direction);
+                }, 5000);
                 break;
             default:
                 break;
         }
         
-        ShowRedeem(direction);
-
-        setTimeout(() => {
-            HideRedeem(direction);
-        }, 5000);
     })
 
 
